@@ -42,7 +42,7 @@ void setup() {
 	digitalWrite(SRF_AT_COMMAND, LOW);
 	RADIO_SERIAL.println("ATZD3");  // output format <payload>|<rssi>
 	RADIO_SERIAL.println("ATPK3A"); // 58byte packet length
-	RADIO_SERIAL.println("ATCN05"); // Channel
+	RADIO_SERIAL.println("ATCN00"); // Channel
 	RADIO_SERIAL.println("ATAC");   // apply
 	RADIO_SERIAL.flush();
 	delay(100);
