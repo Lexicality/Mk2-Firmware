@@ -25,14 +25,17 @@ static void delayMS(uint32_t millis) {
 static void errorBlink(int n) {
 	noInterrupts();
   pinMode(PIN_LED_TXL, OUTPUT);
+  pinMode(PIN_LED_RXL, OUTPUT);
   for (;;) {
     int i;
+    digitalWrite(PIN_LED_RXL, 1);
     for (i = 0; i < n; i++) {
       digitalWrite(PIN_LED_TXL, 1);
       delayMS(300);
       digitalWrite(PIN_LED_TXL, 0);
       delayMS(300);
     }
+    digitalWrite(PIN_LED_RXL, 0);
     delayMS(2000);
   }
 }
