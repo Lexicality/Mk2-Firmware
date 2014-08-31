@@ -184,6 +184,7 @@ inline void RadioReceiveTask::_handleDiscoveryPacket(byte packetBuffer[], uint8_
 	if (timestamp < RADIO_MINIMUM_CURRENT_TIME || timestamp > RADIO_MAXIMUM_CURRENT_TIME) {
 		#ifdef RADIO_DEBUG_MODE
 			debug::log("RadioReceiveTask: timestamp sanity check failed");
+			debug::log( String( timestamp, DEC ) );
 		#endif
 		return;
 	}
